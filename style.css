@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
+
 :root {
   --dark-purple: #1A1832;
   --light-purple: #7A58F4;
 }
+
 img {
   display: block;
   max-width: 100%;
 }
+
 button {
   background: transparent;
   border: none;
@@ -17,6 +21,7 @@ button {
   color: inherit;
   cursor: pointer;
 }
+
 body {
   min-height: 100vh;
   display: flex;
@@ -27,6 +32,7 @@ body {
   color: #333;
   font-family: 'Inter', sans-serif;
 }
+
 .feedback-btn {
   background-color: var(--dark-purple);
   color: #fff;
@@ -36,9 +42,11 @@ body {
   border-radius: 6px;
   transition: opacity 0.2s;
 }
+
 .feedback-btn:hover {
   opacity: 0.9;
 }
+
 .modal {
   display: none;
   position: fixed;
@@ -54,10 +62,12 @@ body {
   opacity: 0;
   transition: 0.2s;
 }
+
 .modal.show {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
 .modal .close {
   margin-inline-start: auto;
   width: 20px;
@@ -65,6 +75,7 @@ body {
   display: block;
   cursor: pointer;
 }
+
 .modal .title {
   text-align: center;
   font-size: 1.3rem;
@@ -72,6 +83,7 @@ body {
   line-height: 1.5;
   margin: 30px 0;
 }
+
 .feedback {
   display: flex;
   flex-wrap: wrap;
@@ -79,22 +91,28 @@ body {
   margin: 40px 0;
   position: relative;
 }
-.feedback::before, .feedback::after {
+
+.feedback::before,
+.feedback::after {
   position: absolute;
   bottom: -20px;
   font-size: 0.7rem;
 }
+
 .feedback::before {
   content: 'Not likely at all';
   inset-inline-start: 0;
 }
+
 .feedback::after {
   content: 'Extremely likely';
   inset-inline-end: 0;
 }
-.modal .score > input {
+
+.modal .score>input {
   display: none;
 }
+
 .modal .score label {
   display: grid;
   place-items: center;
@@ -109,38 +127,46 @@ body {
   box-shadow: 0 10px 25px -15px #111628;
   cursor: pointer;
 }
-.modal .score > input:checked + label {
+
+.modal .score>input:checked+label {
   background-color: var(--light-purple);
 }
-.modal .score > input:not(:checked) + label:hover {
+
+.modal .score>input:not(:checked)+label:hover {
   background-color: var(--light-purple);
 }
+
 .modal .options {
   display: flex;
   justify-content: space-between;
   margin: 30px 0 0;
 }
-.modal .options > button {
+
+.modal .options>button {
   width: 120px;
   padding: 10px 0;
   border-radius: 5px;
   font-weight: 500;
   font-size: 0.875rem;
 }
+
 .modal .cancel {
   background-color: var(--dark-purple);
   border: 1px solid var(--light-purple);
   transition: background-color 0.2s;
 }
+
 .modal .cancel:hover {
   background-color: var(--light-purple);
   opacity: 0.9;
 }
+
 .modal .submit {
   background-color: var(--light-purple);
   border: 1px solid var(--dark-purple);
   transition: opacity 0.2s;
 }
+
 .modal .submit:hover {
   opacity: 0.9
 }
